@@ -18,7 +18,7 @@ function Navbar() {
   ];
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full ">
       <nav className="w-full px-4 md:px-16 lg:px-32 h-16 flex items-center justify-between shadow-md bg-white">
         {/* Logo Section */}
         <div className="flex items-center">
