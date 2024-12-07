@@ -1,13 +1,19 @@
+
 import React from 'react'
 import Header from './Components/Header'
 import Navbar from './Components/Navbar'
+import Searchfield from "./Components/Searchfield"
 
-export default function 
-() {
+
+function App() {
   return (
-    <>
-  <Header/>
-  <Navbar/>
-    </>
+   <>
+   
+   <Header/>
+    <Navbar/>
+    {/* <Searchfield/> */}
+   </>
   )
 }
+
+export default App

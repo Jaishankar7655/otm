@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Search, User, Menu, X, ChevronRight } from "lucide-react";
 import otm from "../assets/svg/otm.svg";
+import Searchfield from "./Searchfield";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [SearchOpen , SetsearchOpen] = useState(false)
 
   const navLinks = [
     { name: "Venue" },
@@ -126,6 +128,7 @@ function Navbar() {
           </div>
         </div>
       </div>
+      
     </div>
   );
 }
