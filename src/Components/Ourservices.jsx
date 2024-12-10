@@ -1,20 +1,21 @@
-import React from 'react'
-import dhol from '../assets/svg/dhol.svg'
-import dj from '../assets/svg/dj.svg'
-import menhdi from '../assets/svg/menhdi.svg'
-import pandit from '../assets/svg/pandit.svg'
-import venue from '../assets/svg/venue.svg'
-import corpe from '../assets/svg/corpe.svg'
+import React from "react";
+import dhol from "../assets/svg/dhol.svg";
+import dj from "../assets/svg/dj.svg";
+import menhdi from "../assets/svg/menhdi.svg";
+import pandit from "../assets/svg/pandit.svg";
+import venue from "../assets/svg/venue.svg";
+import corpe from "../assets/svg/corpe.svg";
+import { Link } from "react-router-dom";
 
 function Ourservices() {
   const services = [
-    { icon: dj, title: "DJ" },
-    { icon: dhol, title: "Dhol" },
+    { icon: dj, title: "DJ", route: "/mehndiservices" },
+    { icon: dhol, title: "Dhol"  , route: "/Shimmerefect"},
     { icon: pandit, title: "Pandit" },
     { icon: menhdi, title: "Mehndi Artist" },
     { icon: venue, title: "Venue" },
-    { icon: corpe, title: "Corporate Events" }
-  ]
+    { icon: corpe, title: "Corporate Events" },
+  ];
 
   return (
     <div className="container mx-auto px-4 py-1">
@@ -23,9 +24,10 @@ function Ourservices() {
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
         {services.map((service, index) => (
-          <div 
-            key={index} 
-            className="
+          <Link to={service.route}>
+            <div
+              key={index}
+              className="
               bg-white 
               rounded-lg 
               shadow-lg 
@@ -41,22 +43,23 @@ function Ourservices() {
               items-center 
               justify-center
             "
-          >
-            <div className="mb-4 w-20 h-20 flex items-center justify-center">
-              <img 
-                src={service.icon} 
-                alt={service.title} 
-                className="max-w-full max-h-full"
-              />
+            >
+              <div className="mb-4 w-20 h-20 flex items-center justify-center">
+                <img
+                  src={service.icon}
+                  alt={service.title}
+                  className="max-w-full max-h-full"
+                />
+              </div>
+              <p className="text-xl font-semibold text-gray-800">
+                {service.title}
+              </p>
             </div>
-            <p className="text-xl font-semibold text-gray-800">
-              {service.title}
-            </p>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
-  )
+  );
 }
 
-export default Ourservices
+export default Ourservices;

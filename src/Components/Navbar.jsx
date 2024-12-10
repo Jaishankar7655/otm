@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Search, User, Menu, X, ChevronRight } from "lucide-react";
 import otm from "../assets/svg/otm.svg";
 import Searchfield from "./Searchfield";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,11 +23,13 @@ function Navbar() {
       <nav className="w-full px-4 md:px-16 lg:px-32 h-16 flex items-center justify-between shadow-md bg-white">
         {/* Logo Section */}
         <div className="flex items-center">
-          <img 
+         <Link to="./" >
+         <img 
             src={otm} 
             alt="Logo" 
             className="h-10 w-auto object-contain" 
           />
+         </Link>
         </div>
 
         {/* Desktop Navigation Links */}
@@ -104,7 +107,7 @@ function Navbar() {
               <div key={id} className="border-b border-gray-200 pb-3">
                 <a
                   href="#"
-                  className="block text-xl text-[#CC0B0B] hover:text-[#FF4444] transition-colors duration-300 flex items-center justify-between"
+                  className=" text-xl text-[#CC0B0B] hover:text-[#FF4444] transition-colors duration-300 flex items-center justify-between"
                 >
                   <span>{link.name}</span>
                   <ChevronRight 
